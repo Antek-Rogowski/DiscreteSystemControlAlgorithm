@@ -1,0 +1,4 @@
+HKEY_LOCAL_MACHINE -> SOFTWARE -> AMandD -> Common
+	FirstRun REG_DWORD 0
+	ServerHost REG_SZ 127.0.0.1
+	ServerPort REG_DWORD 0x00001ce8(7400)

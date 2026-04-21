@@ -1,0 +1,7 @@
+<AMandD_Template_Library data_dir="_templates">
+	<Templates>
+		<TEMPLATE ID="template_12" file_name="Orlen_20081029.xml" mod_ts="2008-10-29T10:44:15" name="Orlen HOG" type="cfg" user="ML" version="20081029">
+			<Description>Wersja konfiguracji z odbioru po uzupełnieniu dokumentacji</Description>
+		</TEMPLATE>
+	</Templates>
+</AMandD_Template_Library>

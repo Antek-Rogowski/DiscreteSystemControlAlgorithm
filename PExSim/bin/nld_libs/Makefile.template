@@ -1,0 +1,39 @@
+# Project: script_template
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main_script_template.o src/{{NAME}}.o $(RES)
+LINKOBJ  = main_script_template.o src/{{NAME}}.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" {{CPP_LIBS}} --no-export-all-symbols --add-stdcall-alias
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS = {{CPP_INCLUDES}}
+BIN  = {{NAME}}.dll
+CXXFLAGS = $(CXXINCS) -DBUILDING_DLL=1 
+CFLAGS = $(INCS) -DBUILDING_DLL=1 
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before {{NAME}}.dll all-after
+
+clean: clean-custom
+	${RM} $(OBJ) 
+
+DLLWRAP=dllwrap.exe
+DEFFILE={{NAME}}.def
+STATICLIB={{NAME}}.a
+
+#$(BIN): $(LINKOBJ)
+#	$(DLLWRAP) --output-def $(DEFFILE) --driver-name c++ --implib $(STATICLIB) $(LINKOBJ) $(LIBS) -o $(BIN)
+
+$(BIN): $(LINKOBJ)
+	$(DLLWRAP) --driver-name c++ $(LINKOBJ) $(LIBS) -o $(BIN)
+
+main_script_template.o: main_script_template.cpp
+	$(CPP) -c main_script_template.cpp -o main_script_template.o $(CXXFLAGS)
+
+src/{{NAME}}.o: src/{{NAME}}.cpp
+	$(CPP) -c src/{{NAME}}.cpp -o src/{{NAME}}.o $(CXXFLAGS)
