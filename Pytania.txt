@@ -1,0 +1,2 @@
+1. Czy "Transfer function" to dobra metoda w modelowaniu obiektu regulacji?
+2. czy da się zadeklarować zmienne globalne?
