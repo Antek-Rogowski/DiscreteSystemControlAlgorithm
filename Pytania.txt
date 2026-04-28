@@ -1,2 +1,9 @@
 1. Czy "Transfer function" to dobra metoda w modelowaniu obiektu regulacji?
 2. czy da się zadeklarować zmienne globalne?
+3. Przeprowadziłem manualne dostrajanie - czy tak to powinienem zrealizować?
+4. Manualna optymalizacja:
+- K
+- Ti
+-Td
+5. Cyz człon K naprawdę nie powinien nic zmieniać
+6. Stałe nasycenie CV - pojawia się problem Wind-up

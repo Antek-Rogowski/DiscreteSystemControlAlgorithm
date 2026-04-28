@@ -313,8 +313,8 @@
 							<Transform>
 								<Properties>
 									<Property name="Processing rate" type="int" value="1"/>
-									<Property name="Low limit" type="real" value="-0.001"/>
-									<Property name="High limit" type="real" value="0.001"/>
+									<Property name="Low limit" type="real" value="-0.0005"/>
+									<Property name="High limit" type="real" value="0.0005"/>
 									<Property name="Rising rate limit" type="real" value="0"/>
 								</Properties>
 							</Transform>
@@ -813,12 +813,12 @@
 					<Transform>
 						<Properties>
 							<Property name="Processing rate" type="int" value="1"/>
-							<Property name="k" type="real" value="0.192"/>
-							<Property name="Ti" type="real" value="151.5"/>
-							<Property name="Td" type="real" value="37.875"/>
+							<Property name="k" type="real" value="100"/>
+							<Property name="Ti" type="real" value="400"/>
+							<Property name="Td" type="real" value="700"/>
 							<Property name="Differentiate inertia" type="real" value="10"/>
-							<Property name="Output low limit" type="real" value="-100"/>
-							<Property name="Output high limit" type="real" value="100"/>
+							<Property name="Output low limit" type="real" value="-1"/>
+							<Property name="Output high limit" type="real" value="1"/>
 							<Property name="Initial output" type="real" value="0"/>
 							<Property name="Bias" type="real" value="0"/>
 							<Property name="Setpoint derivative" type="bool" value="true"/>
@@ -829,8 +829,8 @@
 					<Display>
 						<Properties>
 							<Property name="Color" type="color" value="12632256"/>
-							<Property name="Left" type="int" value="562"/>
-							<Property name="Top" type="int" value="251"/>
+							<Property name="Left" type="int" value="561"/>
+							<Property name="Top" type="int" value="250"/>
 							<Property name="Width" type="int" value="80"/>
 							<Property name="Height" type="int" value="45"/>
 						</Properties>
@@ -851,8 +851,8 @@
 							<Property name="Top" type="int" value="563"/>
 							<Property name="Width" type="int" value="170"/>
 							<Property name="Height" type="int" value="60"/>
-							<Property name="Chart min" type="real" value="-1.9230774450695"/>
-							<Property name="Chart max" type="real" value="2.88446216273136"/>
+							<Property name="Chart min" type="real" value="-0.570016955347372"/>
+							<Property name="Chart max" type="real" value="1.10327566543267"/>
 							<Property name="Autoscale" type="bool" value="false"/>
 							<Property name="Scale each sep." type="bool" value="false"/>
 							<Property name="Precision" type="int" value="3"/>
@@ -898,8 +898,8 @@
 					<Display>
 						<Properties>
 							<Property name="Color" type="color" value="12632256"/>
-							<Property name="Left" type="int" value="61"/>
-							<Property name="Top" type="int" value="660"/>
+							<Property name="Left" type="int" value="76"/>
+							<Property name="Top" type="int" value="659"/>
 							<Property name="Width" type="int" value="300"/>
 							<Property name="Height" type="int" value="75"/>
 						</Properties>
@@ -921,7 +921,7 @@
 							<Property name="Width" type="int" value="170"/>
 							<Property name="Height" type="int" value="45"/>
 							<Property name="Chart min" type="real" value="0"/>
-							<Property name="Chart max" type="real" value="949.016106862878"/>
+							<Property name="Chart max" type="real" value="433.835243822502"/>
 							<Property name="Autoscale" type="bool" value="false"/>
 							<Property name="Scale each sep." type="bool" value="false"/>
 							<Property name="Precision" type="int" value="3"/>
@@ -948,8 +948,8 @@
 					<Display type="1">
 						<Segments size="3">
 							<Segment index="0" value="180"/>
-							<Segment index="1" value="0"/>
-							<Segment index="2" value="153"/>
+							<Segment index="1" value="-1"/>
+							<Segment index="2" value="152"/>
 						</Segments>
 					</Display>
 					<Properties/>
@@ -958,8 +958,8 @@
 					<Display type="1">
 						<Segments size="3">
 							<Segment index="0" value="-189"/>
-							<Segment index="1" value="-94"/>
-							<Segment index="2" value="129"/>
+							<Segment index="1" value="-95"/>
+							<Segment index="2" value="128"/>
 						</Segments>
 					</Display>
 					<Properties/>
@@ -984,16 +984,6 @@
 					</Display>
 					<Properties/>
 				</Connection>
-				<Connection begin_id="2" begin_idx="0" end_id="4" end_idx="0" type="1">
-					<Display type="1">
-						<Segments size="3">
-							<Segment index="0" value="73"/>
-							<Segment index="1" value="0"/>
-							<Segment index="2" value="7"/>
-						</Segments>
-					</Display>
-					<Properties/>
-				</Connection>
 				<Connection begin_id="4" begin_idx="0" end_id="0" end_idx="0" type="1">
 					<Display type="1">
 						<Segments size="3">
@@ -1008,8 +998,8 @@
 					<Display type="1">
 						<Segments size="3">
 							<Segment index="0" value="151"/>
-							<Segment index="1" value="412"/>
-							<Segment index="2" value="-24"/>
+							<Segment index="1" value="411"/>
+							<Segment index="2" value="-9"/>
 						</Segments>
 					</Display>
 					<Properties/>
@@ -1018,8 +1008,8 @@
 					<Display type="1">
 						<Segments size="3">
 							<Segment index="0" value="-189"/>
-							<Segment index="1" value="321"/>
-							<Segment index="2" value="-77"/>
+							<Segment index="1" value="320"/>
+							<Segment index="2" value="-62"/>
 						</Segments>
 					</Display>
 					<Properties/>
@@ -1028,8 +1018,8 @@
 					<Display type="1">
 						<Segments size="3">
 							<Segment index="0" value="78"/>
-							<Segment index="1" value="441"/>
-							<Segment index="2" value="-834"/>
+							<Segment index="1" value="440"/>
+							<Segment index="2" value="-819"/>
 						</Segments>
 					</Display>
 					<Properties/>
@@ -1037,9 +1027,19 @@
 				<Connection begin_id="5" begin_idx="0" end_id="6" end_idx="0" type="1">
 					<Display type="1">
 						<Segments size="3">
-							<Segment index="0" value="-10"/>
-							<Segment index="1" value="86"/>
+							<Segment index="0" value="-25"/>
+							<Segment index="1" value="87"/>
 							<Segment index="2" value="61"/>
+						</Segments>
+					</Display>
+					<Properties/>
+				</Connection>
+				<Connection begin_id="2" begin_idx="0" end_id="4" end_idx="0" type="1">
+					<Display type="1">
+						<Segments size="3">
+							<Segment index="0" value="40"/>
+							<Segment index="1" value="1"/>
+							<Segment index="2" value="41"/>
 						</Segments>
 					</Display>
 					<Properties/>
