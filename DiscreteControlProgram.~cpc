@@ -1,5 +1,5 @@
 <CalcPaths_Export_File>
-	<Simulator after_time="1000" max_steps="0" sample_time="0.1" simulation_rate="0" simulation_ratio="1e-10" start_time="1984-01-01T00:00:00.000" stop_condition="2" stop_time="1984-01-01T00:00:00.000"/>
+	<Simulator after_time="1000" max_steps="0" sample_time="0.1" simulation_rate="0" simulation_ratio="1e-11" start_time="1984-01-01T00:00:00.000" stop_condition="2" stop_time="1984-01-01T00:00:00.000"/>
 	<Paths>
 		<PATH ID="1" block_id="-1" index="-1" name="Path 1">
 			<Paths>
@@ -125,8 +125,8 @@
 									<Property name="Top" type="int" value="192"/>
 									<Property name="Width" type="int" value="170"/>
 									<Property name="Height" type="int" value="45"/>
-									<Property name="Chart min" type="real" value="-0.00258058693710945"/>
-									<Property name="Chart max" type="real" value="19.990847766161"/>
+									<Property name="Chart min" type="real" value="-0.56998602971572"/>
+									<Property name="Chart max" type="real" value="1.10738493557098"/>
 									<Property name="Autoscale" type="bool" value="false"/>
 									<Property name="Scale each sep." type="bool" value="false"/>
 									<Property name="Precision" type="int" value="3"/>
@@ -258,7 +258,7 @@
 				<PATH ID="3" block_id="4" index="-1" name="Element wykonawczy">
 					<Paths/>
 					<Objects>
-						<Object ID="0" flip="false" index="0" name="Subpath Input 1" type="subpath_input">
+						<Object ID="0" flip="false" index="0" name="CV" type="subpath_input">
 							<Transform>
 								<Properties>
 									<Property name="Processing rate" type="int" value="1"/>
@@ -275,7 +275,7 @@
 								</Properties>
 							</Display>
 						</Object>
-						<Object ID="1" flip="false" index="1" name="Subpath Output 1" type="subpath_output">
+						<Object ID="1" flip="false" index="1" name="Wyjście" type="subpath_output">
 							<Transform>
 								<Properties>
 									<Property name="Processing rate" type="int" value="1"/>
@@ -292,7 +292,7 @@
 								</Properties>
 							</Display>
 						</Object>
-						<Object ID="2" flip="false" index="2" name="Sum 1" type="sum">
+						<Object ID="2" flip="false" index="2" name="Suma" type="sum">
 							<Transform>
 								<Properties>
 									<Property name="Processing rate" type="int" value="1"/>
@@ -309,26 +309,26 @@
 								</Properties>
 							</Display>
 						</Object>
-						<Object ID="3" flip="false" index="3" name="Signal limiter 1" type="signal_limiter">
+						<Object ID="3" flip="false" index="3" name="Limiter sygnalu" type="signal_limiter">
 							<Transform>
 								<Properties>
 									<Property name="Processing rate" type="int" value="1"/>
-									<Property name="Low limit" type="real" value="-0.0005"/>
-									<Property name="High limit" type="real" value="0.0005"/>
+									<Property name="Low limit" type="real" value="-0.0001"/>
+									<Property name="High limit" type="real" value="0.0001"/>
 									<Property name="Rising rate limit" type="real" value="0"/>
 								</Properties>
 							</Transform>
 							<Display>
 								<Properties>
 									<Property name="Color" type="color" value="12632256"/>
-									<Property name="Left" type="int" value="522"/>
+									<Property name="Left" type="int" value="523"/>
 									<Property name="Top" type="int" value="394"/>
 									<Property name="Width" type="int" value="60"/>
 									<Property name="Height" type="int" value="30"/>
 								</Properties>
 							</Display>
 						</Object>
-						<Object ID="4" flip="false" index="4" name="Signum 1" type="signum">
+						<Object ID="4" flip="false" index="4" name="Signum" type="signum">
 							<Transform>
 								<Properties>
 									<Property name="Processing rate" type="int" value="1"/>
@@ -338,6 +338,24 @@
 								<Properties>
 									<Property name="Color" type="color" value="12632256"/>
 									<Property name="Left" type="int" value="879"/>
+									<Property name="Top" type="int" value="310"/>
+									<Property name="Width" type="int" value="60"/>
+									<Property name="Height" type="int" value="30"/>
+								</Properties>
+							</Display>
+						</Object>
+						<Object ID="5" flip="false" index="5" name="Wzmocnienie" type="gain">
+							<Transform>
+								<Properties>
+									<Property name="Processing rate" type="int" value="1"/>
+									<Property name="Gain" type="real" value="3"/>
+									<Property name="Clear sig. status" type="bool" value="false"/>
+								</Properties>
+							</Transform>
+							<Display>
+								<Properties>
+									<Property name="Color" type="color" value="12632256"/>
+									<Property name="Left" type="int" value="988"/>
 									<Property name="Top" type="int" value="310"/>
 									<Property name="Width" type="int" value="60"/>
 									<Property name="Height" type="int" value="30"/>
@@ -361,7 +379,7 @@
 								<Segments size="3">
 									<Segment index="0" value="35"/>
 									<Segment index="1" value="94"/>
-									<Segment index="2" value="36"/>
+									<Segment index="2" value="37"/>
 								</Segments>
 							</Display>
 							<Properties/>
@@ -369,7 +387,7 @@
 						<Connection begin_id="3" begin_idx="0" end_id="2" end_idx="1" type="1">
 							<Display type="1">
 								<Segments size="3">
-									<Segment index="0" value="66"/>
+									<Segment index="0" value="65"/>
 									<Segment index="1" value="-74"/>
 									<Segment index="2" value="66"/>
 								</Segments>
@@ -386,12 +404,22 @@
 							</Display>
 							<Properties/>
 						</Connection>
-						<Connection begin_id="4" begin_idx="0" end_id="1" end_idx="0" type="1">
+						<Connection begin_id="4" begin_idx="0" end_id="5" end_idx="0" type="1">
 							<Display type="1">
 								<Segments size="3">
-									<Segment index="0" value="84"/>
+									<Segment index="0" value="30"/>
 									<Segment index="1" value="0"/>
-									<Segment index="2" value="84"/>
+									<Segment index="2" value="24"/>
+								</Segments>
+							</Display>
+							<Properties/>
+						</Connection>
+						<Connection begin_id="5" begin_idx="0" end_id="1" end_idx="0" type="1">
+							<Display type="1">
+								<Segments size="3">
+									<Segment index="0" value="32"/>
+									<Segment index="1" value="0"/>
+									<Segment index="2" value="27"/>
 								</Segments>
 							</Display>
 							<Properties/>
@@ -790,7 +818,7 @@
 							<Property name="Start time" type="real" value="100"/>
 							<Property name="Stop time" type="real" value="500"/>
 							<Property name="Amplitude" type="real" value="1"/>
-							<Property name="Bias" type="real" value="0"/>
+							<Property name="Bias" type="real" value="40"/>
 							<Property name="Kind" type="enum" value="2">
 								<Enumeration index="0" name="impulse"/>
 								<Enumeration index="1" name="ramp"/>
@@ -803,7 +831,7 @@
 						<Properties>
 							<Property name="Color" type="color" value="15780518"/>
 							<Property name="Left" type="int" value="134"/>
-							<Property name="Top" type="int" value="251"/>
+							<Property name="Top" type="int" value="250"/>
 							<Property name="Width" type="int" value="100"/>
 							<Property name="Height" type="int" value="30"/>
 						</Properties>
@@ -813,9 +841,9 @@
 					<Transform>
 						<Properties>
 							<Property name="Processing rate" type="int" value="1"/>
-							<Property name="k" type="real" value="100"/>
-							<Property name="Ti" type="real" value="400"/>
-							<Property name="Td" type="real" value="700"/>
+							<Property name="k" type="real" value="0.0005"/>
+							<Property name="Ti" type="real" value="1400"/>
+							<Property name="Td" type="real" value="60"/>
 							<Property name="Differentiate inertia" type="real" value="10"/>
 							<Property name="Output low limit" type="real" value="-1"/>
 							<Property name="Output high limit" type="real" value="1"/>
@@ -829,8 +857,8 @@
 					<Display>
 						<Properties>
 							<Property name="Color" type="color" value="12632256"/>
-							<Property name="Left" type="int" value="561"/>
-							<Property name="Top" type="int" value="250"/>
+							<Property name="Left" type="int" value="557"/>
+							<Property name="Top" type="int" value="251"/>
 							<Property name="Width" type="int" value="80"/>
 							<Property name="Height" type="int" value="45"/>
 						</Properties>
@@ -840,7 +868,7 @@
 					<Transform>
 						<Properties>
 							<Property name="Processing rate" type="int" value="1"/>
-							<Property name="Buffer length" type="uint" value="20000"/>
+							<Property name="Buffer length" type="uint" value="10000"/>
 							<Property name="Inputs count" type="uint" value="2"/>
 						</Properties>
 					</Transform>
@@ -851,8 +879,8 @@
 							<Property name="Top" type="int" value="563"/>
 							<Property name="Width" type="int" value="170"/>
 							<Property name="Height" type="int" value="60"/>
-							<Property name="Chart min" type="real" value="-0.570016955347372"/>
-							<Property name="Chart max" type="real" value="1.10327566543267"/>
+							<Property name="Chart min" type="real" value="-0.00774176081132839"/>
+							<Property name="Chart max" type="real" value="58.8288388836488"/>
 							<Property name="Autoscale" type="bool" value="false"/>
 							<Property name="Scale each sep." type="bool" value="false"/>
 							<Property name="Precision" type="int" value="3"/>
@@ -909,7 +937,7 @@
 					<Transform>
 						<Properties>
 							<Property name="Processing rate" type="int" value="1"/>
-							<Property name="Buffer length" type="uint" value="10000"/>
+							<Property name="Buffer length" type="uint" value="20000"/>
 							<Property name="Inputs count" type="uint" value="1"/>
 						</Properties>
 					</Transform>
@@ -921,7 +949,44 @@
 							<Property name="Width" type="int" value="170"/>
 							<Property name="Height" type="int" value="45"/>
 							<Property name="Chart min" type="real" value="0"/>
-							<Property name="Chart max" type="real" value="433.835243822502"/>
+							<Property name="Chart max" type="real" value="3822.53224584964"/>
+							<Property name="Autoscale" type="bool" value="false"/>
+							<Property name="Scale each sep." type="bool" value="false"/>
+							<Property name="Precision" type="int" value="3"/>
+							<Property name="Digits" type="int" value="3"/>
+							<Property name="Type" type="enum" value="1">
+								<Enumeration index="0" name="Fixed"/>
+								<Enumeration index="1" name="General"/>
+								<Enumeration index="2" name="Scientific"/>
+							</Property>
+							<Property name="Bkg color" type="color" value="0"/>
+							<Property name="Axes color" type="color" value="8421504"/>
+							<Property name="Bad sample color" type="color" value="255"/>
+							<Property name="Show sample nr" type="bool" value="false"/>
+							<Property name="Color scheme" type="enum" value="0">
+								<Enumeration index="0" name="dark"/>
+								<Enumeration index="1" name="light"/>
+							</Property>
+						</Properties>
+					</Display>
+				</Object>
+				<Object ID="7" flip="false" index="7" name="Display 2" type="display">
+					<Transform>
+						<Properties>
+							<Property name="Processing rate" type="int" value="1"/>
+							<Property name="Buffer length" type="uint" value="10000"/>
+							<Property name="Inputs count" type="uint" value="1"/>
+						</Properties>
+					</Transform>
+					<Display>
+						<Properties>
+							<Property name="Color" type="color" value="12639424"/>
+							<Property name="Left" type="int" value="1251"/>
+							<Property name="Top" type="int" value="251"/>
+							<Property name="Width" type="int" value="170"/>
+							<Property name="Height" type="int" value="45"/>
+							<Property name="Chart min" type="real" value="-1"/>
+							<Property name="Chart max" type="real" value="1"/>
 							<Property name="Autoscale" type="bool" value="false"/>
 							<Property name="Scale each sep." type="bool" value="false"/>
 							<Property name="Precision" type="int" value="3"/>
@@ -948,8 +1013,8 @@
 					<Display type="1">
 						<Segments size="3">
 							<Segment index="0" value="180"/>
-							<Segment index="1" value="-1"/>
-							<Segment index="2" value="152"/>
+							<Segment index="1" value="1"/>
+							<Segment index="2" value="148"/>
 						</Segments>
 					</Display>
 					<Properties/>
@@ -958,8 +1023,8 @@
 					<Display type="1">
 						<Segments size="3">
 							<Segment index="0" value="-189"/>
-							<Segment index="1" value="-95"/>
-							<Segment index="2" value="128"/>
+							<Segment index="1" value="-94"/>
+							<Segment index="2" value="124"/>
 						</Segments>
 					</Display>
 					<Properties/>
@@ -978,7 +1043,7 @@
 					<Display type="1">
 						<Segments size="3">
 							<Segment index="0" value="151"/>
-							<Segment index="1" value="317"/>
+							<Segment index="1" value="318"/>
 							<Segment index="2" value="-90"/>
 						</Segments>
 					</Display>
@@ -998,7 +1063,7 @@
 					<Display type="1">
 						<Segments size="3">
 							<Segment index="0" value="151"/>
-							<Segment index="1" value="411"/>
+							<Segment index="1" value="412"/>
 							<Segment index="2" value="-9"/>
 						</Segments>
 					</Display>
@@ -1037,9 +1102,19 @@
 				<Connection begin_id="2" begin_idx="0" end_id="4" end_idx="0" type="1">
 					<Display type="1">
 						<Segments size="3">
-							<Segment index="0" value="40"/>
-							<Segment index="1" value="1"/>
+							<Segment index="0" value="44"/>
+							<Segment index="1" value="0"/>
 							<Segment index="2" value="41"/>
+						</Segments>
+					</Display>
+					<Properties/>
+				</Connection>
+				<Connection begin_id="4" begin_idx="0" end_id="7" end_idx="0" type="1">
+					<Display type="1">
+						<Segments size="3">
+							<Segment index="0" value="66"/>
+							<Segment index="1" value="0"/>
+							<Segment index="2" value="73"/>
 						</Segments>
 					</Display>
 					<Properties/>
